@@ -1,0 +1,158 @@
+package calc_poo;
+
+import java.util.Scanner;
+
+public class calculadora {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int qtdNum, num = 0, res = 1;
+
+        System.out.print("--- MENU ---" 
+        		+ "\n1 - Adição" 
+        		+ "\n2 - Subtração" 
+        		+ "\n3 - Multiplicação" 
+        		+ "\n4 - Divisão"
+                + "\n5 - Potenciação" 
+        		+ "\n6 - Porcentagem" 
+                + "\n7 - Raíz quadrada" 
+        		+ "\nR: ");
+        
+        int opcaoMenu = sc.nextInt();
+
+        switch (opcaoMenu) {
+        case 1:
+            System.out.print("\nQuantos números serão informados?\nR: ");
+            qtdNum = sc.nextInt();
+
+            if (qtdNum < 1 || qtdNum > 5) {
+                System.out.print("\nQuantidade inválida!");
+            } else {
+                System.out.print("\n");
+
+                for (int i = 0; i < qtdNum; i++) {
+                    System.out.print("Digite o " + (1 + i) + "º número: ");
+                    num = sc.nextInt();
+
+                    res += num;
+                }
+
+                System.out.print("\nResultado: " + (res - 1));
+            }
+
+            break;
+
+        case 2:
+            System.out.print("\nQuantos números serão informados?\nR: ");
+            qtdNum = sc.nextInt();
+
+            if (qtdNum < 1 || qtdNum > 5) {
+                System.out.print("\nQuantidade inválida!");
+            } else {
+                System.out.print("\n");
+
+                for (int i = 0; i < qtdNum; i++) {
+                    System.out.print("Digite o " + (1 + i) + "º número: ");
+                    num = sc.nextInt();
+
+                    res -= num;
+                }
+                System.out.print("\nResultado: " + res);
+
+            }
+            break;
+        case 3:
+            System.out.print("\nQuantos números serão informados?\nR: ");
+            qtdNum = sc.nextInt();
+
+            if (qtdNum < 1 && qtdNum > 5) {
+                System.out.print("\nQuantidade inválida");
+            } else {
+                System.out.print("\n");
+
+                for (int i = 0; i < qtdNum; i++) {
+                    System.out.print("Informe o " + (i + 1) + "º número: ");
+                    num = sc.nextInt();
+
+                    res *= num;
+                }
+                System.out.print("\nResultado: " + res);
+
+            }
+            break;
+
+        case 4:
+            System.out.print("\nQuantos números serão informados?\nR: ");
+            qtdNum = sc.nextInt();
+
+            if (qtdNum < 1 || qtdNum > 2) {
+                System.out.print("\nQuantidade inválida");
+            } else {
+                System.out.print("\nDigite o 1º número: ");
+                int num1 = sc.nextInt();
+
+                System.out.print("Digite o 2º número: ");
+                int num2 = sc.nextInt();
+
+                res = num1 / num2;
+
+                System.out.print("\nResultado: " + res);
+            }
+            break;
+
+        case 5:
+            System.out.print("\nQuantos números serão informados?\nR: ");
+            qtdNum = sc.nextInt();
+
+            if (qtdNum < 1 || qtdNum > 2) {
+                System.out.print("\nQuantidade inválida");
+            } else {
+                System.out.print("\nDigite o 1º número: ");
+                int num1 = sc.nextInt();
+
+                System.out.print("Digite o 2º número: ");
+                int num2 = sc.nextInt();
+
+                res = (int) Math.pow(num1, num2);
+
+                System.out.print("\nResultado: " + res);
+            }
+            break;
+
+        case 6:
+            System.out.print("\nQuantos números serão informados?\nR: ");
+            qtdNum = sc.nextInt();
+
+            if (qtdNum < 1 || qtdNum > 2) {
+                System.out.print("\nQuantidade inválida");
+            } else {
+                System.out.print("\nDigite o 1º número: ");
+                int num1 = sc.nextInt();
+
+                System.out.print("Digite o 2º número: ");
+                int num2 = sc.nextInt();
+
+                double res6 = (100*num2)/num1;
+
+                System.out.print("\nResultado: " + res6);
+            }
+            break;
+
+        case 7:
+
+                System.out.print("\nDigite o 1º número: ");
+                int num1 = sc.nextInt();
+
+                double res7 = (int) Math.sqrt(num1);
+
+                System.out.print("\nResultado: " + res7);
+           
+            break;
+        default:
+            System.out.print("\nOpção inválida!");
+        }
+
+        sc.close();
+    }
+}
+
